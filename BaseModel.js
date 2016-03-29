@@ -1,4 +1,4 @@
-// BaseModel.js 0.0.1
+// BaseModel.js 0.1.0
 // (c) 2016 Costas Vlahakis, Pixacore
 // Licensed under the MIT license.
 
