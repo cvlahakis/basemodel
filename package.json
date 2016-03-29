@@ -1,0 +1,28 @@
+{
+  "name": "basemodel",
+  "version": "0.1.0",
+  "description": "An abstract class to be inherited from for the purpose of persisting models.",
+  "main": "BaseModel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvlahakis/basemodel.git"
+  },
+  "keywords": [
+    "model",
+    "entity",
+    "persist",
+    "persistence",
+    "database",
+    "db",
+    "agnostic"
+  ],
+  "author": "Costas Vlahakis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cvlahakis/basemodel/issues"
+  },
+  "homepage": "https://github.com/cvlahakis/basemodel#readme"
+}
