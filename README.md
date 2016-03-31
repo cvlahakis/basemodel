@@ -5,10 +5,10 @@ This project started as a piece of a proprietary Node.js boilerplate HTTP applic
 
 ## Quick Start
 What's included: BaseModel.js, and validation.js  
-Dive in to a unrealistic example:
-1. `mkdir basemodel-example`
-2. `cd basemodel-example`
-3. `npm install basemodel`
+Dive in to a unrealistic example:  
+1. `mkdir basemodel-example`  
+2. `cd basemodel-example`  
+3. `npm install basemodel`  
 4. Add a file ... maybe include link to gist instead
 
 ## Advantages
@@ -27,22 +27,37 @@ Dive in to a unrealistic example:
 * factory usage
 * db adapter (maybe?)
 
-# Interface
-## initialize()
-## get()
-## set()
-## unset()
-## create()
-## save()
-## softDestroy()
-## hardDestroy()
-## validate()
-## validateProperty()
-## getPreparedAttributes()
-## isNew()
-## getObjectId()
-## wrapValidationError()
-## getSchemaDefinition()
+## Interface
+### initialize(attributes)
+This method is used to set an attributes object on a model instance.
+It is called automatically in the BM constructor.
+### get(property)
+Returns the value of the property. Returns undefined if the property doesn't exist.
+### set(property, value)
+Set the value(s) of one or more properties. There are really two signatures for this method: set(p, v) and set(attrs).
+### unset(property)
+Dereferences the value of the property using the JavaScript keyword *delete*.
+### create(cb)
+Persist a new model to the database. The callback is called with cb(null, self) on success.  
+1. Automatically sets the **createdAt**, **updatedAt**, and **_state** properties  
+2. Validates the model attributes (if the model has a schema)  
+3. Utilizes the model instance's db interface reference (specifically, the .insertOne() method) to persist the data.  
+A key step in the create routine is setting the model identifer. One way to do this is to define a function named "afterCreate" on the prototype of a subclass of BM, and use that fn to set the identifier.
+### save(cb)
+Updates a model that was previously persisted. The callback is called with cb(null, self) on success.
+1. Automatically sets the **updatedAt** property  
+2. Validates the model attributes (if the model has a schema)  
+3. Similar to step 3 for create, using the .updateOne() method  
+All attributes except the model identifier are passed using .updateOne().
+### softDestroy()
+### hardDestroy()
+### validate()
+### validateProperty()
+### getPreparedAttributes()
+### isNew()
+### getObjectId()
+### wrapValidationError()
+### getSchemaDefinition()
 
 # the future
 * working towards version 1.0.0
