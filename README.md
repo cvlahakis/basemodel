@@ -1,7 +1,7 @@
 # BaseModel
 This software project provides an abstract class to be inherited from for the purpose of persisting models in the Node.js environment.  
 
-This project started as a piece of a proprietary Node.js boilerplate HTTP application that was designed and implemented in 2015. Most of the design goals of the original application are intrinsic to the project. The software is currently running in production, but on a relatively small scale. It would be unwise to use this software (version 0.1.0) as a critical component to a larger system.
+This project started as a piece of a proprietary Node.js HTTP application that was designed and implemented in 2015. Most of the design goals of the original application are intrinsic to the project. The software is currently running in production, but on a relatively small scale. It would be unwise to use this software (version 0.1.0) as a critical component to a larger system.
 
 ## Installation
 This software is available through npm. Install it as a dependency by running: `npm install basemodel`
@@ -13,9 +13,9 @@ This software is available through npm. Install it as a dependency by running: `
 
 ## Constraints
 There are a few constraints baked into the design of the software. They are listed here to reduce wasted time.  
-* A concrete subclass of BM (an implementation) must define a **_collection** property. The **_collection** property is used to associate a subclass with a particular table or collection in the underlying datastore.  
-* Once a model has been persisted, it is assumed to have a unique identifier relative to **_collection**. See [create(cb)][] for more info.  
-* An implementation has a **_state** property. This property is meant to reflect the state of a model. For example, a Ticket model has two states: not-used/used.
+* A concrete subclass of BM (an implementation) must define a **_collection** property. The **_collection** property is used to associate an implementation with a particular table or collection in the underlying datastore.  
+* Once a model has been persisted, it is assumed to have a unique identifier relative to **_collection**. See `create(cb)` for more info.  
+* An implementation will have a **_state** attribute. This attribute is meant to reflect the state of a model. For example, a Ticket model has two states: not-used/used.
 
 ## Interface
 ### initialize(attributes)
@@ -24,27 +24,27 @@ It is called automatically in the BM constructor.
 ### get(property)
 Returns the value of the property. Returns undefined if the property doesn't exist.
 ### set(property, value)
-Set the value(s) of one or more properties. There are two signatures for this method: set(p, v) and set(attrs).
+Set the value(s) of one or more properties. There are two signatures for this method: `set(p, v)` and `set(attrs)`.
 ### unset(property)
 Dereferences the value of the property using the JavaScript keyword *delete*.
 ### create(cb)
 Persist a new model to the datastore. The callback is called with cb(null, self) on success.  
-1. Automatically sets the **createdAt**, **updatedAt**, and **_state** properties  
+1. Automatically sets the **createdAt**, **updatedAt**, and **_state** attributes  
 2. Validates the model attributes (if the model has a schema)  
-3. Utilizes the model instance's db interface reference (specifically, the .insertOne() method) to persist the data.  
+3. Utilizes the model instance's db interface reference (specifically, the .insertOne() method) to persist the data  
 A key step in the create routine is setting the model identifer. One way to do this is to define a "afterCreate" property on the prototype of an implementation, and use that function to set the identifier.
 ### save(cb)
 Updates a model that was previously persisted. The callback is called with cb(null, self) on success.  
-1. Automatically sets the **updatedAt** property  
+1. Automatically sets the **updatedAt** attribute  
 2. Validates the model attributes (if the model has a schema)  
 3. Similar to step 3 for `create(cb)`, but using the .updateOne() method  
 All attributes except the model identifier are passed to .updateOne().
 ### softDestroy(cb)
 Changes the **_state** of a model to **_deletedState**. This is useful for retaining data. The callback is called with cb(null, self) on success.  
-1. Automatically sets the **updatedAt** and **_state** properties  
-2. Validates the properties that were set in step 1  
+1. Automatically sets the **updatedAt** and **_state** attributes  
+2. Validates the attributes that were set in step 1  
 3. Similar to step 3 for `save(cb)`  
-The only properties that are passed to .updateOne() are **updatedAt** and **_state**.
+The only attributes that are passed to .updateOne() are **updatedAt** and **_state**.
 ### hardDestroy(cb)
 Remove the model's data from the datastore. Uses the db interface's .removeOne() method. The callback is called with cb(null, self) on success.
 ### validate(cb)
