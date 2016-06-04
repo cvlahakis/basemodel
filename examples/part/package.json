@@ -1,0 +1,16 @@
+{
+  "name": "bm-example-part",
+  "version": "0.1.0",
+  "description": "",
+  "main": "addPart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Costas Vlahakis",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "basemodel": "^0.1.0",
+    "mysql": "^2.6.2"
+  }
+}
