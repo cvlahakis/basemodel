@@ -75,10 +75,8 @@ The property for the model identifier value. This variable is used throughout th
 * DB interface must implement: insertOne(), updateOne(), removeOne()
 
 ## Examples
-The examples are a work in progress. They aren't available yet.
-### Concrete subclass with schema
-### Instantiation using factory pattern
-### Database adapter
+### Part
+The part example contains code for a database adapter, a concrete subclass with schema, and a program to showcase BM. Read the README in examples/part/ for more info.
 
 ## The Future
 Looking ahead, the primary goal is to get some developers using BM in order to create a feedback loop to drive the evolution of the project.
