@@ -1,9 +1,9 @@
 # Example: Part
 ##Description
-The goal is to run the addPart.js script to persist data in a MySQL database. There are several takeaways from this example:  
-1. PartModel.js shows what a concrete subclass of BM looks like  
-2. MySqlInterface.js shows a basic, fully functional database adapter  
-3. partFactory.js shows how you can leverage the factory pattern to ease model instatiation  
+The goal is to run the addPart.js script to persist data in a MySQL database and to learn more about BM in the process. There are several takeaways from this example:  
+1. PartModel.js is a concrete subclass with schema  
+2. MySqlInterface.js is a basic, fully functional database adapter  
+3. partFactory.js shows how you can leverage the factory pattern to ease model instantiation  
 4. Instantiating a configured MySqlInterface instance (in addPart.js)  
 5. Instantiating a subclass instance (in addPart.js)  
 6. Persisting data using .create() (in addPart.js)  
@@ -22,6 +22,6 @@ If you have difficulty getting MySQL up and running seek help online.
 5. Run `source [ path to basemodel/examples/part ]/part.sql` - this will create a MySQL table named "part"  
 * Optional: run `describe part`, which will show you the part table design
 ### MySqlInterface Configuration
-1. In addPart.js: make all necessary configuration adjustments in the dbConfig object
+1. In addPart.js: make all necessary configuration adjustments in the **dbConfig** object
 ### NPM Install
 1. Run `npm install` in the basemodel/examples/part directory
