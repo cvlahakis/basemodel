@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS part;
 
 CREATE TABLE part (
 	_id int UNSIGNED NOT NULL AUTO_INCREMENT,
-	number varchar(25) NOT NULL,
+	number varchar(10) NOT NULL,
 	name varchar(50) NOT NULL,
 	createdAt DATETIME NOT NULL,
 	updatedAt DATETIME NOT NULL,
