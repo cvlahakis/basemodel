@@ -1,7 +1,5 @@
 var BaseModel = require('basemodel');
 
-module.exports = PartModel;
-
 function PartModel(attributes, options){
 	BaseModel.apply(this, arguments);
 }
@@ -47,6 +45,8 @@ PartModel.prototype = Object.create(BaseModel.prototype, {
 		}
 	},
 
+	// sets the model identifier
+	// called automatically in the create routine
 	afterCreate: {
 		configurable: false,
 		writable: false,
@@ -60,20 +60,29 @@ PartModel.prototype = Object.create(BaseModel.prototype, {
 
 PartModel.prototype.constructor = PartModel;
 
+/*
+	this is a static method, shown here as an example
+	an actual implementation is left out	
+
 PartModel.getByNumber = function(_db, num, cb){
 	// .execArbitraryQuery() is nice to have on the db interface
-	// the string being used as the first parameter is just an example
-	_db.execArbitraryQuery(' insert query here ', function(err, data){
+	// the string being used as the first parameter has to be replaced
+	// with an actual query
+	_db.execArbitraryQuery(' insert query here ', function(err, results){
 		if(err) return cb(err);
 
-		if(!data) return cb(null, null);
+		var r = results[0];
 
-		cb(null, new PartModel(data, {dbInterface: _db}));
+		if(!r) return cb(null, null);
+
+		cb(null, new PartModel(r, {dbInterface: _db}));
 	});
 
-	return;
-
-	// a better and more abstract way of performing this query 
+	// .getByNumber() can be written in a cleaner way by adding a
+	// generic .getOneByQuery() method to the db interface
 	// var coll = PartModel.prototype._collection;
-	// _db.getOneByQuery(coll, {num: num}, function(err, data){ ...
+	// _db.getOneByQuery(coll, {num: num}, function(err, results){ ...
 };
+*/
+
+module.exports = PartModel;

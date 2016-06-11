@@ -1,4 +1,7 @@
-// consider license on this
+// MySqlInterface.js 0.1.0
+// (c) 2016 Costas Vlahakis
+// Licensed under the MIT license.
+
 var	EventEmitter = require('events').EventEmitter,
 	util = require('util'),
 	async = require('async'),

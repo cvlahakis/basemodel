@@ -1,6 +1,6 @@
 if(process.argv.length !== 4){
 	console.error('');
-	console.error('Usage: node addPart number name');
+	console.error('usage: node addPart number name');
 	console.error('');
 	process.exit(1);
 }
@@ -11,7 +11,7 @@ var dbConfig = {
 	host: 'localhost',
 	port: 3306,
 	user: 'root',
-	// password: 'root', some unsecure installs don't require a password
+	// password: 'root', some unsecured installs don't require a password
 	database: 'basemodel_example',
 	connectionLimit: 10
 };
