@@ -76,7 +76,7 @@ The property for the model identifier value. This variable is used throughout th
 
 ## Examples
 ### Part
-The part example contains code for a database adapter, a concrete subclass with schema, and a program to showcase BM. Read the README in examples/part/ for more info.
+The part example is a complete working example of BM. The example ties together a PartModel class with a MySQL database adapter. The example is run in the form of a simple script. Check out the README in examples/part/ for more info.
 
 ## The Future
 Looking ahead, the primary goal is to get some developers using BM in order to create a feedback loop to drive the evolution of the project.
