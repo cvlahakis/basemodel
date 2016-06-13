@@ -20,10 +20,10 @@ Example: `node addPart 1 'Monkey Wrench'`
 If you have difficulty getting MySQL up and running, seek help online.  
 1. Get MySQL server running  
 2. Get MySQL client running  
-3. Run `create database basemodel_example`  
+3. Run `create database basemodel_example;`  
 4. Run `use basemodel_example`  
 5. Run `source [ path to basemodel/examples/part ]/part.sql` - this will create a MySQL table named "part"  
-6. Optional: run `describe part`, which will show you the part table design
+6. Optional: run `describe part;`, which will show you the part table design
 ### MySqlInterface Configuration
 1. In addPart.js: make all necessary configuration adjustments in the **dbConfig** object
   
