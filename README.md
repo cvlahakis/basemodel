@@ -75,10 +75,8 @@ The property for the model identifier value. This variable is used throughout th
 * DB interface must implement: insertOne(), updateOne(), removeOne()
 
 ## Examples
-The examples are a work in progress. They aren't available yet.
-### Concrete subclass with schema
-### Instantiation using factory pattern
-### Database adapter
+### Part
+The part example is a complete working example of BM. The example ties together a PartModel class with a MySQL database adapter. The example is run in the form of a simple script. Check out the README in examples/part/ for more info.
 
 ## The Future
 Looking ahead, the primary goal is to get some developers using BM in order to create a feedback loop to drive the evolution of the project.
