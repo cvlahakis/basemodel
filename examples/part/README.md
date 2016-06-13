@@ -26,5 +26,6 @@ If you have difficulty getting MySQL up and running, seek help online.
 6. Optional: run `describe part`, which will show you the part table design
 ### MySqlInterface Configuration
 1. In addPart.js: make all necessary configuration adjustments in the **dbConfig** object
+  
 ### NPM Install
 1. Run `npm install` in the basemodel/examples/part directory
