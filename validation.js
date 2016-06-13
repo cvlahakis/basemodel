@@ -1,4 +1,4 @@
-// validation.js 0.1.0
+// validation.js 0.2.0
 // (c) 2016 Costas Vlahakis, Pixacore
 // Licensed under the MIT license.
 

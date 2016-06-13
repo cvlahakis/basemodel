@@ -1,4 +1,4 @@
-// MySqlInterface.js 0.1.0
+// MySqlInterface.js 0.2.0
 // (c) 2016 Costas Vlahakis
 // Licensed under the MIT license.
 
