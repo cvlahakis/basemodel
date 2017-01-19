@@ -4,7 +4,7 @@
   "description": "An abstract class to be inherited from for the purpose of persisting models.",
   "main": "BaseModel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,9 @@
     "async": "^0.9.2",
     "lodash": "^3.10.1",
     "validator": "^3.43.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "jasmine-spec-reporter": "^3.2.0"
   }
 }
