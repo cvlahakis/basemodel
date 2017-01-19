@@ -1,5 +1,5 @@
-// BaseModel.js 0.2.0
-// (c) 2016 Costas Vlahakis, Pixacore
+// BaseModel.js 0.3.0
+// (c) 2017 Costas Vlahakis, Pixacore
 // Licensed under the MIT license.
 
 var async = require('async'),

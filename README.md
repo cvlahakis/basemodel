@@ -1,7 +1,7 @@
 # BaseModel
 This software project provides an abstract class to be inherited from for the purpose of persisting models in the Node.js environment.  
 
-This project started as a piece of a proprietary Node.js HTTP application that was designed and implemented in 2015. Most of the design goals of the original application are intrinsic to the project. The software is currently running in production, but on a relatively small scale. It would be unwise to use this software (version 0.1.0) as a critical component to a larger system.
+This project started as a piece of a proprietary Node.js HTTP application that was designed and implemented in 2015. Most of the design goals of the original application are intrinsic to the project. The software is currently running in production, but on a relatively small scale. It would be unwise to use this software (version 0.3.0) as a critical component to a larger system.
 
 ## Installation
 This software is available through npm. Install it as a dependency by running: `npm install basemodel`

@@ -1,5 +1,5 @@
-// validation.js 0.2.0
-// (c) 2016 Costas Vlahakis, Pixacore
+// validation.js 0.3.0
+// (c) 2017 Costas Vlahakis, Pixacore
 // Licensed under the MIT license.
 
 var validator = require('validator');

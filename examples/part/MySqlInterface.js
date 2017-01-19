@@ -1,5 +1,5 @@
-// MySqlInterface.js 0.2.0
-// (c) 2016 Costas Vlahakis
+// MySqlInterface.js 0.3.0
+// (c) 2017 Costas Vlahakis
 // Licensed under the MIT license.
 
 var	EventEmitter = require('events').EventEmitter,
